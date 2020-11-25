@@ -5,15 +5,15 @@ set user=Benutzerdefiniert
 :start
 color 07
 cls
-echo Farbe der Uhr auswÑhlen:
+echo Farbe der Uhr ausw‚Äûhlen:
 echo.
-echo 1 = Schwarz-Wei·
-echo 2 = Wei·-Schwarz
+echo 1 = Schwarz-Wei√°
+echo 2 = Wei√°-Schwarz
 if not %user%==Benutzerdefiniert call :c 0F "3 = Farbe " & call :c %user% "%user%" /n
 if %user%==Benutzerdefiniert echo 3 = %user%
 echo 4 = Beenden
 if exist "%temp%\Uhr - Settings.txt" set/p color=<"%temp%\Uhr - Settings.txt"
-if exist "%temp%\Uhr - Settings.txt" call :c 07 "5 = Einstellung " & call :c %color% "%color:~0,-2%" & call :c 07 " zurÅcksetzen." /n
+if exist "%temp%\Uhr - Settings.txt" call :c 07 "5 = Einstellung " & call :c %color% "%color:~0,-2%" & call :c 07 " zur¬Åcksetzen." /n
 set auswahl=leer
 set/p auswahl="Auswahl eingeben: "
 if %auswahl%==1 echo 0F >"%temp%\Uhr - Settings.txt" & echo. & echo Farbe festgelegt & pause & exit
@@ -21,9 +21,9 @@ if %auswahl%==2 echo F0 >"%temp%\Uhr - Settings.txt" & echo. & echo Farbe festge
 if %auswahl%==3 goto user
 if %auswahl%==4 echo. & echo Wird beendet... & pause & exit
 if exist "%temp%\Uhr - Settings.txt" (
-    if %auswahl%==5 del/f /q "%temp%\Uhr - Settings.txt" & echo. & echo ZurÅckgesetzt. & pause & goto start
+    if %auswahl%==5 del/f /q "%temp%\Uhr - Settings.txt" & echo. & echo Zur¬Åckgesetzt. & pause & goto start
 )
-echo ungÅltige Eingabe
+echo ung¬Åltige Eingabe
 pause
 goto start
 
@@ -38,17 +38,17 @@ echo kann einen der folgenden Werte annehmen:
 echo.
 call :c 07 "     " & call :c 80 "0 = Schwarz" & call :c 08 "     8 = Grau" /n
 call :c 01 "     1 = Blau" & call :c 09 "        9 = Hellblau" /n
-call :c 02 "     2 = GrÅn" & call :c 0A "        A = HellgrÅn" /n
-call :c 03 "     3 = TÅrkis" & call :c 0B "      B = HelltÅrkis" /n
+call :c 02 "     2 = Gr¬Ån" & call :c 0A "        A = Hellgr¬Ån" /n
+call :c 03 "     3 = T¬Årkis" & call :c 0B "      B = Hellt¬Årkis" /n
 call :c 04 "     4 = Rot" & call :c 0C "         C = Hellrot" /n
 call :c 05 "     5 = Lila" & call :c 0D "        D = Helllila" /n
 call :c 06 "     6 = Gelb" & call :c 0E "        E = Hellgelb" /n
-call :c 07 "     7 = Hellgrau" & call :c 0F "    F = Wei·" /n
+call :c 07 "     7 = Hellgrau" & call :c 0F "    F = Wei√°" /n
 echo.
 echo Beispiele:
 echo.
-call :c 02 "02 Schwarz-GrÅn" /n
-call :c 0A "0A Schwarz-HellgrÅn" /n
+call :c 02 "02 Schwarz-Gr¬Ån" /n
+call :c 0A "0A Schwarz-Hellgr¬Ån" /n
 call :c DE "DE Hellila-Hellgelb" /n
 endlocal
 set user=leer
