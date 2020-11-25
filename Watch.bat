@@ -8,9 +8,9 @@ mode con lines=5 cols=15
 :start
 cls
 echo.
-echo ÚÄÄÄÄÄÄÄÄÄÄÄÄ¿
-echo ³  %time:~0,-3%  ³
-echo ÀÄÄÄÄÄÄÄÄÄÄÄÄÙ
+echo ÃšÃ„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Â¿
+echo Â³  %time:~0,-3%  Â³
+echo Ã€Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã„Ã™
 ping -4 -n 2 -w 1000 localhost >nul
 goto start
 pause
